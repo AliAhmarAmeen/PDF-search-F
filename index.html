@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF QA System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><i class="fas fa-file-pdf"></i> PDF Insight Explorer</h1>
+
+      <div class="upload-section">
+        <div class="file-input-wrapper">
+          <input type="file" id="pdfInput" accept="application/pdf" />
+          <label for="pdfInput" class="custom-file-btn">
+            <i class="fas fa-file-upload"></i>
+            Choose PDF
+          </label>
+        </div>
+        <div class="upload-status" id="uploadStatus"></div>
+        <div class="loader" id="loader" style="display: none"></div>
+        <p class="drag-drop-hint">or drag and drop PDF here</p>
+      </div>
+
+      <div class="qa-section" id="qaSection">
+        <textarea
+          id="questionInput"
+          placeholder="Ask your question... (e.g., What is the main topic of this document?)"
+        ></textarea>
+        <button onclick="askQuestion()" id="askBtn">
+          <i class="fas fa-search"></i>
+          Get Answer
+        </button>
+        <div class="answer-container" id="answerContainer"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
