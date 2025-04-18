@@ -70,7 +70,7 @@ async function uploadPDF() {
     formData.append("file", file);
 
     const response = await fetch(
-      "pdf-search-b-production.up.railway.app/upload",
+      "https://pdf-search-b-production.up.railway.app/upload",
       {
         method: "POST",
         body: formData,
@@ -116,11 +116,14 @@ async function askQuestion() {
   clearAnswer();
 
   try {
-    const response = await fetch("pdf-search-b-production.up.railway.app/ask", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ context, question }),
-    });
+    const response = await fetch(
+      "https://pdf-search-b-production.up.railway.app/ask",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ context, question }),
+      }
+    );
 
     if (!response.ok) {
       const error = await response.json();
