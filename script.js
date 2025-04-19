@@ -70,7 +70,8 @@ async function uploadPDF() {
     formData.append("file", file);
 
     const response = await fetch(
-      "https://pdf-search-b-production.up.railway.app/upload",
+      "https://pdf-search-b-productions.up.railway.app/upload",
+      // "http://localhost:8080/upload",
       {
         method: "POST",
         body: formData,
@@ -117,7 +118,8 @@ async function askQuestion() {
 
   try {
     const response = await fetch(
-      "https://pdf-search-b-production.up.railway.app/ask",
+      "https://pdf-search-b-productions.up.railway.app/ask",
+      // "http://localhost:8080/ask",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
